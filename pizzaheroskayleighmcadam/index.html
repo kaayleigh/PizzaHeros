@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Heros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen">
+        <div class="start-screen-buttons">
+            <button id="start-button">START GAME</button>
+            <button id="instructions-button">INSTRUCTIONS</button>
+        </div>
+
+        <div id="instruction-box" class="hidden">
+            <div class="instruction-content">
+                <span class="close">&times;</span>
+                <h2 id="instruction-title">Welcome to Pizza Heroes!</h2>
+                <p id="instruction-text">Become a PIZZA HERO! 
+                    <br>
+                    <br>Choose a character, discover and create delicous pizzas. 
+                    <br>Helpful hints and tips will be provided to help you throughout the game. - Good luck!
+                    <br>
+                    <br>Press start to begin the game.</p>
+                </p>
+                <button id="got-it">Got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        
+        $('#start-button').click(function() {
+            window.location.href = 'character.html'; 
+        });
+
+        $('#instructions-button').click(function() {
+            $('#instruction-box').fadeIn(); // Show the instruction box
+        });
+        
+        $('.close, #got-it').click(function() {
+            $('#instruction-box').fadeOut(); // Hide the instruction box
+        });
+    </script>
+</body>
+</html>

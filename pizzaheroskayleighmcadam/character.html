@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Character</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="character-screen" class="screen">
+        <h2>Select a Chef</h2>
+        <div id="character-options">
+            <img src="elements/avatar/character1.png" alt="Character 1" class="character" data-avatar="elements/avatar/character1.png">
+            <img src="elements/avatar/character2.png" alt="Character 2" class="character" data-avatar="elements/avatar/character2.png">
+        </div>
+        <div id="name-input-section">
+            <input type="text" id="player-name" placeholder="Enter your name" required>
+        </div>
+
+        <div id="character-feedback"></div> 
+
+        <div class="character-screen-buttons">
+            <button id="next-screen">PICK TOPPINGS</button>
+            <button id="instructions-button">HELP</button>
+        </div>
+
+        <div id="instruction-box" class="hidden">
+            <div class="instruction-content">
+                <span class="close">&times;</span>
+                <h2 id="instruction-title"></h2>
+                <p id="instruction-text"></p>
+                <button id="got-it">Got it!</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script> 
+    <script>
+        $('#instructions-button').click(function() {
+            $('#instruction-box').fadeIn(); // Show the instruction box
+        });
+        
+        $('.close, #got-it').click(function() {
+            $('#instruction-box').fadeOut(); // Hide the instruction box
+        });
+    </script>
+</body>
+</html>

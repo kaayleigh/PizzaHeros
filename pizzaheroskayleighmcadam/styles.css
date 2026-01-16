@@ -1,0 +1,1233 @@
+/* General Styles */
+/*______________________________________________________________________________________________________ */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Englebert', cursive; 
+    text-align: center;
+    margin: 0;
+    background: url('elements/pizzaHeroesBG.png') center center / cover no-repeat;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+h1, h2 {
+    color: #FFD700;
+}
+
+button {
+    padding: 15px 15px;
+    font-family: 'Luckiest Guy', sans-serif;
+    font-size: 22px;
+    margin: 15px;
+    cursor: pointer;
+    background-color: #FF4500;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    z-index: 100;
+}
+
+button:hover {
+    background-color: #FF6347;
+}
+
+#instruction-box {
+    position: fixed;
+    z-index: 190; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.screen {
+    display: none;
+    background: url('elements/pizzaHeroesBG.png') center center / cover no-repeat; 
+}
+
+/* Score Display Styling */
+.score-display {
+    font-family: 'Luckiest Guy', sans-serif;
+    font-size: 16px; 
+    color: #FFD700; 
+    padding: 10px 20px; 
+    display: inline-block;
+    margin: 10px auto;
+    text-align: center;
+    position: relative; 
+}
+
+.avatar-display {
+    position: absolute; 
+    right: 400px;
+    top: 240px; 
+}
+
+.avatar-display img{
+    width: 170px;
+    height: 330px; 
+    max-width: 100%; 
+}
+
+.instruction-content {
+    background-color: #fefefe;
+    color: #333; /* Darker text for contrast */
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+    z-index: 1000;
+}
+
+.instruction-content h2 {
+    color: #FFD700; /* Gold color for heading */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+/*______________________________________________________________________________________________________ */
+
+
+/* Welcome Screen */
+/*______________________________________________________________________________________________________ */
+#welcome-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background: url('elements/pizzaHeroesStart.png') center center / cover no-repeat; 
+    color: #FFF9E6;
+}
+
+.start-screen-buttons {
+    display: flex;
+    flex-direction: row; /* Stack buttons vertically */
+    justify-content: center; /* Center buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+    margin-bottom: -640px; /* Space from the bottom */
+    /* margin-left: 30px; */
+    z-index: 101;
+}
+/*______________________________________________________________________________________________________ */
+
+
+/* Character Screen */
+/*______________________________________________________________________________________________________ */
+#character-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #FFF9E6;
+}
+
+#character-screen h2 {
+    font-size: 24px;
+    color: #FFD700;
+    margin-top: 90px;
+}
+
+#character-options {
+    display: block;
+    margin-top: 50px;
+    justify-content:space-around;
+}
+
+#player-name {
+    margin-top: 45px;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: 'Englebert', cursive;
+    font-weight: bold;
+}
+
+#name-input-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+#character-feedback {
+    position: fixed;
+    bottom: 330px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 11;
+    display: none; 
+}
+
+#showMessage{
+    position: fixed;
+    bottom: 330px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 11;
+    display: none; 
+}
+
+
+.character-screen-buttons{
+    margin-top: auto;
+    margin-bottom: 70px;
+    z-index: 50;
+}
+.character {
+    margin-bottom: auto;
+    width: 180px; 
+    height: auto; 
+    cursor: pointer;
+}
+
+.character.selected-character { 
+    height: auto;
+}
+/*______________________________________________________________________________________________________ */
+
+
+/* Ingredient Screen */
+/*______________________________________________________________________________________________________ */
+#ingredient-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    color: #FFF9E6;
+    padding: 20px;
+    overflow: hidden;
+}
+
+#ingredient-screen h2 {
+    font-size: 24px;
+    color: #FFD700;
+    margin-top: 70px;
+}
+
+#ingredient-feedback {
+    position: fixed;
+    top: 145px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 11;
+    display: none; 
+}
+
+#ingredient-screen img.pantry-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28%;
+    max-width: 60%;
+    max-height: 60%;
+    height: auto;
+    z-index: 0; 
+}
+
+/* Button styling */
+.ingredient-screen-buttons{
+    margin-top: auto;
+    margin-bottom:50px;
+}
+
+/* Pizza Info Box */
+.pizza-info {
+    width: 120px;
+    background-color: #384030;
+    color: white;
+    border: 4px solid #fac132;
+    padding: 4px;
+    position: absolute;
+    top: 210px;
+    left: 410px;
+    z-index: 10;
+    font-size: 10px;
+}
+
+.pizza-info h3 {
+    font-size: 12px;
+    margin-top: -5px;
+    margin-bottom: 1px;
+}
+
+.pizza-info img {
+    width: 70%;
+    height: auto;
+    margin-bottom: -3px;
+}
+
+.pizza-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pizza-info li {
+    margin: 2px 0;
+}
+
+.pizza-info li img {
+    width: 25px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.ingredient-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
+    z-index: 1;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    flex-grow: 0;
+}
+
+.ingredient {
+    margin-bottom: -100px;
+    display: flex;
+    flex-direction: column;
+    margin-inline: 25px;
+    justify-content: center;
+    width: 55px;
+    height: auto;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.shelf-two {
+    margin-top: -115px;
+    align-items: center;
+}
+
+.shelf-three {
+    margin-top: -230px;
+    align-items: center;
+    height: auto;
+}
+
+.selected-ingredient {
+    border: 2px solid green;
+    box-shadow: 0 0 10px green;
+    border-radius: 5px;
+}
+
+.wrong-ingredient {
+    animation: shake 0.5s;
+    border: 2px solid red;
+    box-shadow: 0 0 10px red;
+    border-radius: 5px;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+/*______________________________________________________________________________________________________ */
+
+
+/* Assembly Screen */
+/*______________________________________________________________________________________________________ */
+#assembly-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #FFF9E6;
+}
+
+#assembly-screen h2{
+    font-size: 24px;
+    color: #FFD700;
+    margin-top: 270px;
+    margin-bottom: 25px;                                          
+}
+
+#ingredients {
+    display:flex;
+    justify-content: center;
+    padding: -55;
+    margin-left: 40px;
+}
+
+#pizza-assembly-zone {
+    position: relative;
+    width: 470px; 
+    height: 470px;
+}
+  
+#pizza-assembly-zone .pizza-board {
+    width: 100%; 
+    height: 100%;
+    display: block;
+    margin-top: -11%;
+}
+
+#assembly-area {
+    position: relative;
+    width: 345px; 
+    height: 345px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 15%;
+    top: -91%;
+}
+
+#pizza-base-drop {
+    top:35px;
+    z-index: 11;
+}
+
+#pizza-sauce-drop {
+    margin-top: 35px; 
+    z-index: 13;
+}
+
+#pizza-cheese-drop {
+    top: 35px;
+    z-index: 14;
+}
+
+#pizza-toppings-drop {
+    top: 35px;
+    z-index: 16;
+}
+
+#ham3-drop{
+    top: 35px;
+    z-index: 17;
+}
+
+#pineapple-drop{
+    top: 35px;
+    z-index: 18;
+}
+
+#ham2-drop{
+top: 35px;
+z-index: 19;    
+}
+
+#mushroom-drop{
+    top: 35px;
+    z-index: 20;
+}
+
+#olive-drop{
+    top: 35px;
+    z-index: 21;
+}
+
+#assembly-feedback{
+    position: fixed;
+    bottom: 295px;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 11;
+    display: none;
+}
+
+#reset-toppings {
+    padding: 8px;
+    font-family: 'Luckiest Guy', sans-serif;
+    font-size: 10px;
+    margin: 10px;
+    align-items: center;
+    cursor: pointer;
+    background-color: #FF4500;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.assembly-screen-buttons {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 250px;
+    z-index: 22; 
+}
+
+.assembly {
+    background-color: #ffd1a9;
+    border: 2px solid #ff8c42;
+    padding: 25px;
+    margin: 5px auto;
+    cursor: grab;
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 0.8rem;
+    width: 80px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 10;
+}
+
+.assembly:active {
+    cursor: +9-grabbing;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropzone .hidden {
+    display: none;
+}
+
+.draggable {
+    flex-direction: column;
+    margin: 5px;
+    margin-top: -35px;
+    margin-bottom: 0;
+    cursor: grab;
+    text-align: center;
+}
+
+.draggable img {
+    width: 65px;
+    height: 65px;
+}
+
+.ingredient-dropped {
+    border: none;
+    transform: none;
+    box-shadow: none;
+    cursor: default;
+    opacity: 0.5;
+}
+
+.ingredient-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 80%;
+    height: auto;
+    z-index: 20;
+    object-fit: contain;
+    margin: 10% auto;
+}
+
+.dropzone {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px dashed #ccc;
+}
+
+.dropzone.highlight {
+    border-color: green;
+}
+
+.pizza-info2 {
+    width: 120px;
+    background-color: #384030;
+    color: white;
+    border: 4px solid #fac132;
+    padding: 4px;
+    position: absolute;
+    top: 210px;
+    left: 410px;
+    z-index: 10;
+    font-size: 10px;
+}
+
+.pizza-info2 h3 {
+    font-size: 12px;
+    margin-top: -5px;
+    margin-bottom: 1px;
+}
+
+.pizza-info2 img {
+    width: 70%;
+    height: auto;
+    margin-bottom: -3px;
+}
+
+.pizza-info2 li {
+    margin: 1px 0;
+}
+
+.pizza-info2 li img {
+    width: 25px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.required-ingredients2 ul {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+/*______________________________________________________________________________________________________ */
+
+
+/* Cooking Screen */
+/*______________________________________________________________________________________________________ */
+#cooking-screen {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;      
+    justify-content: center;  
+    height: 100vh;
+    color: #FFF9E6;
+}
+
+#cooking-screen h2{
+    font-size: 24px;
+    color: #FFD700;
+    margin-top: 105px;
+    margin-bottom: 5px;
+}
+
+#cooking-screen .oven {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+#cooking-timer {
+    font-size: 15px;
+    color: #32CD32;
+    text-align: center;
+}
+
+#cooking-messages {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 35;
+}
+
+.oven {
+    text-align: center;
+    margin: 10px auto;
+    height: 550px; 
+}
+
+.oven-image{
+    max-width: 100%;
+    height: auto;
+}
+
+.oven-off, .oven-on {
+    width: 250px;
+    display: none;
+}
+
+.oven-off {
+    display: block; 
+}
+
+.button-container{
+    position: relative;
+}
+
+.message {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 90px;
+}
+
+.action-button {
+    font-size: 14px;
+    padding: 10px 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1px;
+    margin-bottom: 5px;
+}
+
+.action-button:hover {
+    background-color: #e64a19;
+}
+
+.cooking-screen-buttons{
+    margin-bottom: 65px;
+}
+/*______________________________________________________________________________________________________ */
+
+
+/* Finished Pizza Screen */
+/*______________________________________________________________________________________________________ */
+#finished-pizza-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #FFF9E6; 
+}
+
+#finished-pizza-screen h2 {
+    margin-top: -170px; 
+    margin-bottom: 45px;
+} 
+
+#pizza-status {
+    position: relative; 
+    width: 400px; 
+    height: 400px; 
+    margin: 20px auto; 
+}
+
+#pizza-status .pizza-board {
+    width: 105%;
+    height: 105%;
+    display: block;
+}
+
+#pizza-image {
+    position: absolute;
+    top: 57%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    width: 100%; 
+    height: auto;
+}
+
+#pizza-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+#final-score {
+    font-size: 24px;
+    color: #FFD700;
+    margin: 20px 0;
+    margin-bottom: 5%;
+}
+
+#total-score {
+    font-family: 'Luckiest Guy', sans-serif;  
+    font-size: 20px;                         
+    color: #FFD700;                         
+    z-index: 120;                  
+}
+
+#next-level {
+    margin-top: 55px;
+    margin-bottom: 5px;
+    z-index: 50;
+}
+
+#restart-button {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    z-index: 50;
+}
+
+#restart-button:hover {
+    background-color: #FF6347; 
+}
+/*______________________________________________________________________________________________________ */
+
+
+/* Media Queries for Responsiveness */
+/*______________________________________________________________________________________________________ */
+@media only screen and (max-width: 768px) {
+    body {
+        height: auto; /* Allow body to adjust height */
+    }
+
+    h1, h2 {
+        font-size: 20px; /* Decrease font sizes on smaller screens */
+    }
+  
+    button {
+        font-size: 16px; /* Adjust button font size */
+        padding: 9px; /* Adjust button padding */
+    }
+
+    .instruction-content {
+        background-color: #fefefe;
+        color: #333; /* Darker text for contrast */
+        margin: 45% auto; 
+        /* padding: 20px; */
+        border: 1px solid #888;
+        width: 80%; 
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+        z-index: 1000;
+    }
+
+    .start-screen-buttons {
+        display: flex;
+        flex-direction: row; /* Stack buttons vertically */
+        justify-content: center; /* Center buttons vertically */
+        align-items: center; /* Center buttons horizontally */
+        margin-bottom: -415px; /* Space from the bottom */
+        /* margin-left: 30px; */
+        z-index: 101;
+    }
+
+    .character-screen-buttons{
+        margin-top: 25px;
+        margin-bottom: 110px;
+        z-index: 50;
+    }
+    .character {
+        margin-bottom: auto;
+        width: 100px; 
+        height: auto; 
+        cursor: pointer;
+    }
+
+    #character-screen h2 {
+        font-size: 24px;
+        color: #FFD700;
+        margin-top: 125px;
+        margin-bottom: 0;
+    }
+
+    .avatar-display {
+        position: absolute; 
+        right: 125px;
+        top: 415px; 
+    }
+    
+    .avatar-display img{
+        width: 100px;
+        height: auto; 
+        max-width: 100%; 
+    }
+
+    #player-name {
+        font-size: 18px; 
+    }
+
+    #character-options {
+        flex-direction: column; 
+    }
+
+    #ingredient-screen h2 {
+        font-size: 24px;
+        color: #FFD700;
+        margin-top: 265px;
+    }
+    
+    #ingredient-feedback {
+        position: fixed;
+        top: 145px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        z-index: 11;
+        display: none; 
+    }
+    
+    #ingredient-screen img.pantry-background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+        max-width: 60%;
+        max-height: 60%;
+        height: auto;
+        z-index: 0; 
+    }
+
+    .ingredient-screen-buttons{
+        margin-top: -40px;
+        margin-bottom: 500px;
+    }
+
+    .ingredient-options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 130px;
+        z-index: 1;
+        flex-wrap: wrap;
+        gap: 1px;
+        width: 100%;
+        flex-grow: 0;
+    }
+
+    .ingredient {
+        margin-top: -165px;
+        display: flex;
+        flex-direction: column;
+        margin-inline: 25px;
+        justify-content: center;
+        width: 40px;
+        height: auto;
+        cursor: pointer;
+        transition: opacity 0.3s;
+    }
+    
+    .shelf-two {
+        margin-top: -325px;
+        align-items: center;
+    }
+    
+    .shelf-three {
+        margin-top: -485px;
+        align-items: center;
+        height: auto;
+    }
+
+    .ingredient-display img {
+        width: 40px; /* Smaller image for ingredients */
+        height: auto;
+    }
+
+    .pizza-info {
+        width: 95px;
+        background-color: #384030;
+        color: white;
+        border: 4px solid #fac132;
+        padding: 4px;
+        position: absolute;
+        top: 310px;
+        left: 128px;
+        z-index: 10;
+        font-size: 10px;
+    }
+
+    .pizza-info2 {
+        width: 90px;
+        background-color: #384030;
+        color: white;
+        border: 4px solid #fac132;
+        position: absolute;
+        top: 275px;
+        left: 130px;
+        z-index: 10;
+        font-size: 8px;
+    } 
+
+    #assembly-screen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        color: #FFF9E6;
+    }
+
+    #assembly-screen h2 {
+        font-size: 20px;
+        color: #FFD700;
+        margin-top: 170px;
+        margin-bottom: 1px;                                          
+    }
+
+    #ingredients {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin-left: 20px;
+    }
+
+    #pizza-assembly-zone {
+        position: relative;
+        width: 250px; 
+        height: 250px;
+    }
+
+    #pizza-assembly-zone .pizza-board {
+        width: 100%; 
+        height: 100%;
+        display: block;
+        margin-top: -5%;
+    }
+
+    #assembly-area {
+        position: relative;
+        width: 220px; 
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: 8%;
+        top: -90%;
+    }
+
+    #pizza-base-drop, #pizza-sauce-drop, #pizza-cheese-drop, #pizza-toppings-drop, 
+    #ham3-drop, #pineapple-drop, #ham2-drop, #mushroom-drop, #olive-drop {
+        top: 20px;
+        z-index: 11;
+    }
+
+    #assembly-feedback {
+        position: fixed;
+        bottom: 460px;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        z-index: 11;
+        display: none;
+    }
+
+    #reset-toppings {
+        padding: 6px;
+        font-family: 'Luckiest Guy', sans-serif;
+        font-size: 8px;
+        margin: 8px;
+        align-items: center;
+        cursor: pointer;
+        background-color: #FF4500;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+    }
+
+    .assembly-screen-buttons {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 150px;
+        z-index: 22; 
+    }
+
+    .assembly {
+        background-color: #ffd1a9;
+        border: 2px solid #ff8c42;
+        padding: 20px;
+        margin: 5px auto;
+        cursor: grab;
+        text-align: center;
+        font-family: 'Luckiest Guy', cursive;
+        font-size: 0.7rem;
+        width: 70px;
+        height: 95px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+        z-index: 10;
+    }
+
+    .assembly:active {
+        cursor: grabbing;
+        transform: scale(1.1);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .draggable img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .ingredient-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 70%;
+        height: auto;
+        z-index: 20;
+        object-fit: contain;
+        margin: 5% auto;
+    }
+
+    .dropzone {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        border: 2px dashed #ccc;
+    }
+
+    .dropzone.highlight {
+        border-color: green;
+    }
+
+    .pizza-info2 h3 {
+        font-size: 10px;
+        margin-top: 1px;
+        margin-bottom: -3px;
+    }
+
+    .pizza-info2 img {
+        width: 60%;
+        height: auto;
+        margin-bottom: -3px;
+    }
+
+    .pizza-info2 li {
+        margin: 1px 0;
+    }
+
+    .pizza-info2 li img {
+        width: 20px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .required-ingredients2 ul {
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+    }
+
+    #cooking-screen h2{
+        font-size: 18px;
+        color: #FFD700;
+        margin-top: 285px;
+        margin-bottom: -25px;
+    }
+    
+    .oven-image{
+        max-width: 40%;
+        height: 90%;
+        margin-top: -10px;
+        margin-left: 100px;
+    }
+
+    .cooking-screen-buttons{
+        margin-top: -200px;
+        margin-bottom: 275px;
+    }
+
+    .message {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 390px;
+    }
+    #cooking-timer {
+        font-size: 15px;
+        color: #32CD32;
+        text-align: center;
+        margin-top: -35px;
+        margin-bottom: 25px;
+    }
+
+    #pizza-image {
+        position: absolute;
+        top: 57%;
+        left: 54%;
+        transform: translate(-50%, -50%);
+        height: auto;
+    }
+
+    #pizza-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #pizza-status {
+        position: relative; 
+        width: 275px; 
+        height: 275px; 
+        margin-bottom: 10px;
+    }
+    
+    #pizza-status .pizza-board {
+        width: 105%;
+        height: 105%;
+        display: block;
+    }
+
+    #finished-pizza-screen h2 {
+        margin-top: -145px; 
+        margin-bottom: -40px;
+    } 
+
+    #next-level {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        z-index: 50;
+    }
+
+    #restart-button {
+        margin-top: -350px;
+        z-index: 50;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    button {
+        font-size: 16px; /* Further reduce button font size */
+    }
+
+    .avatar-display img {
+        width: 80px; /* Smaller avatar for smaller screens */
+    }
+
+    .ingredient {
+        width: 40px; /* Further reduce width of ingredient buttons */
+    }
+
+    #pizza-status {
+        width: 90%; /* More responsive pizza info */
+        height: auto; /* Allow for height adjustment */
+    }
+
+    #pizza-status .pizza-board {
+        width: 100%;
+        height: auto;
+    }
+
+    #final-score {
+        font-size: 20px; /* Smaller final score font */
+    }
+
+    #total-score {
+        font-size: 18px; /* Adjust total score font */
+    }
+}
+/*______________________________________________________________________________________________________ */

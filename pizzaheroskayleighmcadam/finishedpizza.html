@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Heroes - Pizza Status</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="finished-pizza-screen" class="screen">
+        <h2>Your Pizza is Ready!</h2>
+    
+        <div id="pizza-status">
+            <img src="elements/pizzaboard.png" class="pizza-board" alt="Pizza Board">
+            <div id="pizza-image">
+                <!-- Perfect Pizzas -->
+                <img id="pizza-perfect-1" src="elements/pizza1.png" class="hidden" alt="Perfect Pizza Level 1">
+                <img id="pizza-perfect-2" src="elements/pizza2.png" class="hidden" alt="Perfect Pizza Level 2">
+                <img id="pizza-perfect-3" src="elements/pizza3.png" class="hidden" alt="Perfect Pizza Level 3">
+                <img id="pizza-perfect-4" src="elements/pizza4.png" class="hidden" alt="Perfect Pizza Level 4">
+                
+                <!-- Burned Pizzas -->
+                <img id="pizza-burned-1" src="elements/pizza1burned.png" class="hidden" alt="Burned Pizza Level 1">
+                <img id="pizza-burned-2" src="elements/pizza2burned.png" class="hidden" alt="Burned Pizza Level 2">
+                <img id="pizza-burned-3" src="elements/pizza3burned.png" class="hidden" alt="Burned Pizza Level 3">
+                <img id="pizza-burned-4" src="elements/pizza4burned.png" class="hidden" alt="Burned Pizza Level 4">
+            </div>
+            
+            <div id="current-level-score" class="hidden">
+                <h4>Your Level <span id="current-level"></span> <span id="score">0</span>.</h4>
+            </div>
+
+            <!-- New section for displaying the total score -->
+            <div id="total-score" class="hidden">
+                <h4>Your Total Score: <span id="total-score-value">0</span></h4>
+            </div>
+
+            <div class="avatar-display">
+                <img id="player-avatar" src="" alt="Player Avatar"/>
+            </div>
+
+            <button id="next-level">Next Level</button>
+            <button id="restart-button" style="display: none;">Restart Game</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

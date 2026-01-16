@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="ingredient-screen" class="screen">
+        <h2>Select Your Ingredients for Level 3</h2>
+        <div class="pizza-info">
+            <div class="score-display">
+                <p>Level <span id="current-level"></span></p>
+                <span id="score">0</span>
+            </div>
+            <div class="pizza-challenge">
+                <h3>Hawaiian Pizza</h3>
+                <img src="elements/pizza3.png" alt="Level 1 Pizza">
+            </div>
+            <div class="required-ingredients">
+                <h3>Ingredients</h3>
+                <ul>
+                    <li><img src="elements/ingredientslist/dough.png" alt="Dough">Dough</li>
+                    <li><img src="elements/ingredientslist/sauce.png" alt="Sauce">Sauce</li>
+                    <li><img src="elements/ingredientslist/cheese.png" alt="Cheese">Cheese</li>
+                    <li><img src="elements/ingredientslist/ham.png" alt="Ham">Ham</li>
+                    <li><img src="elements/ingredientslist/pineapple.png" alt="Pineapple">Pineapple</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="ingredient-feedback" style="display: none;"></div>
+        
+        <img src="elements/ingredients-pantry.jpg" alt="Pantry Image" class="pantry-background">
+        <div class="ingredient-options">
+            <img src="elements/ingredientslist/dough.png" alt="Dough" class="ingredient">
+            <img src="elements/ingredientslist/sauce.png" alt="Sauce" class="ingredient">
+            <img src="elements/ingredientslist/cheese.png" alt="Cheese" class="ingredient">
+        </div>
+        <div class="ingredient-options">
+            <img src="elements/ingredientslist/olive.png" alt="Olive" class="ingredient shelf-two">
+            <img src="elements/ingredientslist/pepperoni.png" alt="Pepperoni" class="ingredient shelf-two">
+            <img src="elements/ingredientslist/tomato.png" alt="Tomato" class="ingredient shelf-two">
+        </div>
+        <div class="ingredient-options">
+            <img src="elements/ingredientslist/ham.png" alt="Hawaiian Ham" id="ham1" class="ingredient shelf-three">
+            <img src="elements/ingredientslist/mushroom.png" alt="Mushroom" class="ingredient shelf-three">
+            <img src="elements/ingredientslist/pineapple.png" alt="Pineapple" class="ingredient shelf-three">
+        </div>
+
+        <div class="avatar-display">
+            <img id="player-avatar" src="" alt="Player Avatar"/>
+        </div>
+
+        <div class="ingredient-screen-buttons">
+            <button id="go-to-assembly" type="button">MAKE PIZZA</button>
+            <button id="instructions-button">HELP</button>
+        </div>
+
+        <div id="instruction-box" class="hidden">
+            <div class="instruction-content">
+                <span class="close">&times;</span>
+                <h2 id="instruction-title">Select the pizza ingredients</h2>
+                <p id="instruction-text">Pick the correct ingredients. Click on the ingredients to select them.</p>
+                <button id="got-it">Got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $('#instructions-button').click(function() {
+            $('#instruction-box').fadeIn(); // Show the instruction box
+        });
+        
+        $('.close, #got-it').click(function() {
+            $('#instruction-box').fadeOut(); // Hide the instruction box
+        });
+    </script>
+</body>
+</html>

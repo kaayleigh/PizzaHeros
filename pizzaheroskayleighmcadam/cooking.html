@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Heroes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="cooking-screen" class="screen">
+        <h2>Cooking Your Pizza</h2>
+        
+        <div class="score-display">
+            <p>Level <span id="current-level"></span></p>
+            <span id="score">0</span>
+        </div>
+
+        <div class="oven">
+            <div id="cooking-timer">
+                <h3>Cooking Time: <span id="timer">10</span> seconds</h3>
+            </div>
+            <div id="oven-light">
+                <img src="elements/ovenoff.png" alt="Oven Off" class="oven-image oven-off">
+                <img src="elements/ovenon.png" alt="Oven On" class="oven-image oven-on hidden">       
+            </div>
+    
+            <div class="button-container">
+                <button id="finish-cooking" class="action-button">Start Cooking</button>
+            </div>    
+
+            <div id="cooking-messages" class="message">
+                <div id="burning" class="message" style="display: none;">Your pizza is burning!</div>
+                <div id="complete" class="message" style="display: none;">Pizza is perfectly cooked!</div>
+                <div id="burned" class="message" style="display: none;">Oh no! Your pizza is burned!</div>
+                <div id="undercooked" class="message" style="display: none;">Your pizza is undercooked! - Keep cooking</div>
+            </div>
+        </div>
+
+        <div class="avatar-display">
+            <img id="player-avatar" src="" alt="Player Avatar"/>
+        </div>
+
+        <div class="cooking-screen-buttons">
+            <button id="instructions-button">HELP</button>
+        </div>
+
+        <div id="instruction-box" class="hidden">
+            <div class="instruction-content">
+                <span class="close">&times;</span>
+                <h2 id="instruction-title">Cooking Instructions!</h2>
+                <p id="instruction-text">1. Click start cooking button. 
+                    <br> 2. Look at the timer! It shows how many seconds are left. 
+                    <br> 3. If the timer goes below 4 seconds, your pizza might start to burn! 
+                    <br> 4. Stop the timer before it hits 0 seconds, or your pizza will burn!</p>
+                <button id="got-it">Got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

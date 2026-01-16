@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Heroes - Ingredient Assembly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="assembly-screen" class="screen">
+        <h2>Assemble Your Pizza</h2>
+
+        <div id="pizza-assembly-zone">
+            <img src="elements/pizzaboard.png" class="pizza-board" alt="Pizza Board">
+            <div id="assembly-area">
+                <div id="pizza-base-drop" class="dropzone"></div>
+                <div id="pizza-sauce-drop" class="dropzone hidden"></div>
+                <div id="pizza-cheese-drop" class="dropzone hidden"></div>
+                <div id="pizza-toppings-drop" class="dropzone hidden"></div>
+            </div>
+        </div>
+
+        <div id="assembly-feedback"></div>
+
+        <div class="pizza-info2">
+            <div class="score-display">
+                <p>Level <span id="current-level"></span></p>
+                <span id="score">0</span>
+            </div>
+            <div class="pizza-challenge2">
+                <h3>Pepperoni Pizza</h3>
+                <img src="elements/pizza2.png" alt="Level 1 Pizza">
+            </div>
+            <div class="required-ingredients2">
+                <h3>Ingredients</h3>
+                <ul>
+                    <li><img src="elements/ingredientslist/dough.png" alt="Dough">Dough</li>
+                    <li><img src="elements/ingredientslist/sauce.png" alt="Sauce">Sauce</li>
+                    <li><img src="elements/ingredientslist/cheese.png" alt="Cheese">Cheese</li>
+                    <li><img src="elements/ingredientslist/pepperoni.png" alt="Pepperoni">Pepperoni</li>
+                </ul>
+            </div>
+
+            <button id="reset-toppings">Reset Toppings</button>
+
+        </div>
+
+        <div id="ingredients" class="ingredients-container">
+            <div class="assembly draggable" id="pizza-base-draggable" data-target="pizza-base-drop" data-order="1" draggable="true">
+                <img src="elements/toppings/pizzabase.png" alt="Pizza Base" class="ingredient">
+            </div>
+            <div class="assembly draggable" id="sauce-draggable" data-target="sauce-drop" data-order="2" draggable="true">
+                <img src="elements/toppings/pizzasauce.png" alt="Pizza Sauce" class="ingredient">
+            </div>
+            <div class="assembly draggable" id="cheese-draggable" data-target="cheese-drop" data-order="3" draggable="true">
+                <img src="elements/toppings/gratedcheese.png" alt="Cheese" class="ingredient">
+            </div>
+            <div class="assembly draggable" id="tomato" data-target="tomato-drop" data-order="4" draggable="true">
+                <img src="elements/toppings/pepperonislices.png" alt="Pepperoni" class="ingredient">
+            </div>
+        </div>
+        
+        <div class="avatar-display">
+            <img id="player-avatar" src="" alt="Player Avatar"/>
+        </div>
+
+        <div class="assembly-screen-buttons">
+            <button id="go-to-cooking">BAKE PIZZA!</button>
+            <button id="instructions-button">HELP</button>
+        </div>    
+
+        <div id="instruction-box" class="hidden">
+            <div class="instruction-content">
+                <span class="close">&times;</span>
+                <h2 id="instruction-title">Assemble the Pizza!</h2>
+                <p id="instruction-text">Drag and drop the toppings onto the pizza! Remember to follow the order: Dough, Sauce, Cheese then Toppings.</p>
+                <button id="got-it">Got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $('#instructions-button').click(function() {
+            $('#instruction-box').fadeIn(); // Show the instruction box
+        });
+        
+        $('.close, #got-it').click(function() {
+            $('#instruction-box').fadeOut(); // Hide the instruction box
+        });
+    </script>
+</body>
+</html>
